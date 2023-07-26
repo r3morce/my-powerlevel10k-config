@@ -31,9 +31,9 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    os_icon               # os identifier
+    # os_icon               # os identifier
     dir                     # current directory
-    # vcs                     # git status
+    vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n
     prompt_char             # prompt symbol
@@ -45,7 +45,7 @@
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    vcs
+    # vcs
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
@@ -55,12 +55,10 @@
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     goenv                   # go environment (https://github.com/syndbg/goenv)
-  
     nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
     # nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
     nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     node_version            # node.js version
-   
     # go_version            # go version (https://golang.org)
     # rust_version          # rustc version (https://www.rust-lang.org)
     # dotnet_version        # .NET version (https://dotnet.microsoft.com)
@@ -96,7 +94,7 @@
     vim_shell               # vim shell indicator (:sh)
     midnight_commander      # midnight commander shell (https://midnight-commander.org/)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
-    chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
+    # chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
     # vpn_ip                # virtual private network indicator
     # load                  # CPU load
     # disk_usage            # disk usage
@@ -107,9 +105,11 @@
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     # cpu_arch              # CPU architecture
     # time                    # current time
+    ip                    # ip address and bandwidth usage for a specified network interface
+    os_icon
+    
     # =========================[ Line #2 ]=========================
     newline
-    ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
@@ -898,7 +898,7 @@
 
   # Don't show context unless running with privileges or in SSH.
   # Tip: Remove the next line to always show context.
-  typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
+  # typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
 
   # Custom icon.
   # typeset -g POWERLEVEL9K_CONTEXT_VISUAL_IDENTIFIER_EXPANSION='⭐'
