@@ -105,11 +105,12 @@
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     # cpu_arch              # CPU architecture
     # time                    # current time
-    ip                    # ip address and bandwidth usage for a specified network interface
-    os_icon
+    # os_icon
     
     # =========================[ Line #2 ]=========================
     newline
+    ip                    # ip address and bandwidth usage for a specified network interface
+    tailscale_ip    
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
@@ -1636,6 +1637,14 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
     p10k segment -f 208 -i '⭐' -t 'hello, %n'
+  }
+
+  function prompt_tailscale_ip() {
+    local address=$(tailscale ip -4)
+    
+    if [ -n "$address" ]; then
+        p10k segment -f 208 -t "TS IP $address"
+    fi
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
